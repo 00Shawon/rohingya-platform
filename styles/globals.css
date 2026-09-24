@@ -1193,7 +1193,7 @@ h4 {
 
   text-transform: uppercase;
 
-  color: #c0392b;
+  color: #fff;
 }
 
 
@@ -6423,6 +6423,511 @@ h4 {
     animation-duration: 0.01ms !important;
 
     animation-iteration-count: 1 !important;
+  }
+
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1000;
+
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 2rem;
+
+  background:
+    rgba(13, 21, 29, 0.94);
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.07);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.nav-brand {
+  color: white;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.05rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.nav-brand span {
+  color: #c0392b;
+}
+
+
+/* =========================================================
+   DESKTOP LINKS
+   ========================================================= */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.8rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: rgba(255,255,255,0.62);
+
+  font-family: monospace;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.09em;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #c0392b;
+
+  transition:
+    width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE TOGGLE
+   ========================================================= */
+
+.nav-mobile-toggle {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(255,255,255,0.12);
+
+  background:
+    rgba(255,255,255,0.03);
+
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.nav-mobile-toggle:hover {
+  background:
+    rgba(255,255,255,0.07);
+
+  border-color:
+    rgba(255,255,255,0.22);
+}
+
+
+.hamburger-line {
+  display: block;
+
+  width: 18px;
+  height: 1px;
+
+  background: white;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    width 0.3s ease;
+}
+
+
+/* X state */
+
+.hamburger-line:nth-child(1).active {
+  transform:
+    translateY(6px)
+    rotate(45deg);
+}
+
+.hamburger-line:nth-child(2).active {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger-line:nth-child(3).active {
+  transform:
+    translateY(-6px)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE PANEL
+   ========================================================= */
+
+.mobile-nav-panel {
+  position: fixed;
+
+  z-index: 999;
+
+  top: 64px;
+  left: 0;
+  right: 0;
+
+  max-height:
+    calc(100vh - 64px);
+
+  overflow-y: auto;
+
+  background:
+    linear-gradient(
+      145deg,
+      #101922,
+      #0b1218
+    );
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.09);
+
+  box-shadow:
+    0 20px 50px
+    rgba(0,0,0,0.3);
+}
+
+
+.mobile-nav-inner {
+  position: relative;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding:
+    1.8rem
+    1.3rem
+    1.4rem;
+}
+
+
+/* subtle grid */
+
+.mobile-nav-inner::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.035;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.6) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.6) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+}
+
+
+/* =========================================================
+   PANEL LABEL
+   ========================================================= */
+
+.mobile-nav-label {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 1.2rem;
+
+  color: #c0392b;
+
+  font-family: monospace;
+
+  font-size: 0.56rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.mobile-nav-label span {
+  width: 25px;
+  height: 1px;
+
+  background: #c0392b;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.mobile-nav-links {
+  position: relative;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.08);
+}
+
+
+.mobile-nav-links > div {
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.08);
+}
+
+
+.mobile-nav-links a {
+  display: grid;
+
+  grid-template-columns:
+    35px
+    1fr
+    30px;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  min-height: 66px;
+
+  color: white;
+
+  text-decoration: none;
+
+  transition:
+    padding-left 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.mobile-nav-links a:hover {
+  padding-left: 7px;
+
+  background:
+    rgba(255,255,255,0.025);
+}
+
+
+.mobile-nav-number {
+  color:
+    rgba(192,57,43,0.8);
+
+  font-family: monospace;
+
+  font-size: 0.57rem;
+
+  letter-spacing: 0.08em;
+}
+
+
+.mobile-nav-name {
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size: 1.3rem;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+}
+
+
+.mobile-nav-arrow {
+  color:
+    rgba(255,255,255,0.28);
+
+  font-size: 0.85rem;
+
+  text-align: right;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.mobile-nav-links a:hover
+.mobile-nav-arrow {
+  color: #c0392b;
+
+  transform:
+    translate(2px, -2px);
+}
+
+
+/* =========================================================
+   PANEL FOOTER
+   ========================================================= */
+
+.mobile-nav-footer {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-top: 1.2rem;
+
+  color:
+    rgba(255,255,255,0.28);
+
+  font-family: monospace;
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.12em;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .nav {
+    height: 60px;
+
+    padding:
+      0
+      1.2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-mobile-toggle {
+    display: flex;
+  }
+
+  .mobile-nav-panel {
+    top: 60px;
+
+    max-height:
+      calc(100vh - 60px);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .nav-brand {
+    font-size: 0.93rem;
+  }
+
+  .mobile-nav-name {
+    font-size: 1.15rem;
+  }
+
+  .mobile-nav-links a {
+    min-height: 60px;
+  }
+
+  .mobile-nav-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.35rem;
   }
 
 }
